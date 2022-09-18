@@ -1,4 +1,4 @@
-<h4>新規会員登録</h4>
+<h4>会員情報編集</h4>
 
 <%= form_with model:@customer do |f| %>
   <div class="form-group">
@@ -10,7 +10,6 @@
     <%= f.label :フリガナ %> <%= f.text_field :last_name_kana, placeholder:"レイワ", autofocus: true %>
     <%= f.text_field :first_name_kana, placeholder:"ミチコ", autofocus: true %>
   </div><br>
-
 
   <div class="form-group">
     <%= f.label :郵便番号 %>
