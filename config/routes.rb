@@ -19,14 +19,14 @@ Rails.application.routes.draw do
 
   scope module: :public do
     resources :addresses, except:[:new,:show]
-    resources :orders, only:[:new,:create,:index,:show]
     get 'orders/thanks', as: "thanks"
     post 'orders/confirm', as: "confirm"
-    resources :cart_items, only:[:index,:update,:destroy,:create]
+    resources :orders, only:[:new,:create,:index,:show]
     delete 'cart_items/destroy_all', as: "destroy_all"
-    resources :customers, only:[:show,:edit,:update]
+    resources :cart_items, only:[:index,:update,:destroy,:create]
     get 'customers/unsubscribe', as: "unsubscribe"
     patch 'customers/withdraw', as: "withdraw"
+    resources :customers, only:[:show,:edit,:update]
     resources :items, only:[:index,:show]
     root to: 'homes#top'
     get 'about' => 'homes#about'
