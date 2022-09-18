@@ -11,6 +11,6 @@ class Customer < ApplicationRecord
     last_name + first_name
   end
   def full_name_space
-    last_name + " " + first_name
+    last_name + "  " + first_name
   end
 end
