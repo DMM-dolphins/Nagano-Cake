@@ -3,20 +3,29 @@
   <div class="row">
     <div class="col-8 m-auto">
       <div class="col-10">
-<%= form_with model: @item, url: admin_items_path, method: :post do |f| %>
-    <label>商品画像</label>
-    <%= f.file_field :image, accept: "image/*" %></br>
-    <label>商品名</label><%= f.text_field :name, placeholder: "商品名" %></br>
-    <label>商品説明</label><%= f.text_area :introduction, placeholder: "ここに説明文を記述します" %></br>
-    <label>ジャンル</label>
+    <%= form_with model: @item, url: admin_items_path, method: :post do |f| %>
+    
+     <%= f.label :item_image,"商品画像",style:"margin-right:70px;"%>
+     <%= f.file_field :item_image, accept: "image/*" %><br>
+    
+      <%= f.label :name,"商品名",style:"margin-right:85px;margin-top:15px;"%>
+    <%= f.text_field :name, placeholder: "商品名",size: "36"%></br>
+    
+    <%= f.label :introduction, "商品説明", style:"vertical-align:top; margin-top:5px; margin-right:70px;"  %>
+    <%= f.text_area :introduction, placeholder: "ここに説明文を記述します",style:"width:307px; height:150px; resize:none; margin-top:15px;" %></br>
+    
+    <%= f.label :genre_id, "ジャンル", style:"margin-right:70px;margin-top:15px;"  %>
     <%= f.collection_select :genre_id, @genres, :id, :name, include_blank: "--選択してください--", class: "form-control col-sm-8" %></br>
-    <label>税抜価格</label><%= f.text_field :price, placeholder: "1000" %>円</br>
-    <label>販売ステータス</label>
+    
+    <%= f.label :price, "税抜価格", style:"margin-right:70px;margin-top:15px;"  %>
+    <%= f.text_field :price, placeholder: "1000" %>円</br>
+    
+    <%= f.label :is_active, "販売ステータス", style:"margin-right:20px;margin-top:15px;"  %>
       <%= f.radio_button :is_active, :true %>
       <%= f.label :is_active, "販売中", {value: :true, checked: true, style: "display: inline-block;"} %>
       <%= f.radio_button :is_active, :false %>
       <%= f.label :is_active, "販売停止中", {value: :false, style: "display: inline-block;"} %></br>
-    <%= f.submit "新規登録", class: "btn btn-success" %></br>
+    <%= f.submit "新規登録", class: "btn btn-success",style:"font-weight:bold; padding:5px 20px; margin:20px 20px 0 220px;"  %></br>
   <% end %>
    </div>
     </div>
