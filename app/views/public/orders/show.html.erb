@@ -26,21 +26,21 @@
       </tr>
     </table>
   </div>
-  
+
   <div class="col">
     <h6>請求情報</h6>
     <table class="table">
       <tr>
         <td>商品合計</td>
-        <td></td>
+        <td><%= @sum.to_s(:delimited) %></td>
       </tr>
       <tr>
         <td>配送料</td>
-        <td></td>
+        <td><%= @order.shipping_cost.to_s(:delimited)  %></td>
       </tr>
       <tr>
         <td>ご請求額</td>
-        <td></td>
+        <td><%= @order.total_payment.to_s(:delimited)  %></td>
       </tr>
     </table>
   </div>
@@ -57,12 +57,12 @@
     </tr>
   </thead>
   <tbody>
-  <% @order.order_details.each do |datail| %>
+  <% @order.order_details.each do |detail| %>
     <tr>
-      <td><%= datail.item.name %></td>
-      <td><%= datail.price %></td>
-      <td><%= datail.amount %></td>
-      <td></td>
+      <td><%= detail.item.name %></td>
+      <td><%= detail.price.to_s(:delimited) %></td>
+      <td><%= detail.amount %></td>
+      <td><%= (detail.price*detail.amount).to_s(:delimited) %></td>
     </tr>
   <% end %>
   </tbody>
