@@ -1,24 +1,68 @@
-# README
+# Nagano-Cake(https://7d339b80a94d4a029a3542cb725c2e6a.vfs.cloud9.ap-northeast-1.amazonaws.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+DMMWEBCAMPのチーム開発で作成したECサイトとなります。
 
-Things you may want to cover:
+# 動作が分かる画像
 
-* Ruby version
+動画
 
-* System dependencies
+# アプリケーションの詳細な説明
 
-* Configuration
+説明
 
-* Database creation
+# 言語やフレームワークのバージョン
 
-* Database initialization
+* huga 3.5.2
+* hogehuga 1.0.2
 
-* How to run the test suite
+# Installation
 
-* Services (job queues, cache servers, search engines, etc.)
+Requirementで列挙したライブラリなどのインストール方法を説明する
 
-* Deployment instructions
+```bash
+pip install huga_package
+```
 
-* ...
+# Usage
+
+DEMOの実行方法など、"hoge"の基本的な使い方を説明する
+
+```bash
+git clone https://github.com/hoge/~
+cd examples
+python demo.py
+```
+
+# 機能一覧
+
+*顧客側*
+【会員未登録】
+
+*サイトの閲覧*
+会員新規登録機能
+検索(商品名
+【会員登録後】
+
+ログイン機能（メールアドレス、パスワードでログイン）
+ログアウト機能
+退会機能
+商品一覧、詳細
+商品のカート追加機能
+カート内の商品の個数変更機能
+商品購入機能
+マイページでの登録情報の変更、配送先の追加、注文履歴の確認機能
+検索(商品名)
+管理者側
+ログイン機能
+ログアウト機能
+商品の新規登録、一覧、詳細、編集機能（販売ステータスの変更が可能）
+会員の一覧、詳細、会員情報の編集機能（会員ステータスを有効/退会に切り替えが可能）
+注文履歴の一覧、詳細、注文状況の編集機能（注文ステータス, 製作ステータスの切り替えが可能）
+商品のジャンル設定
+
+# チームメンバー
+
+* 新井智大
+* 河田彩華
+* 坂田史織
+* 小宮孝也
