@@ -13,4 +13,8 @@ class Customer < ApplicationRecord
   def full_name_space
     last_name + "  " + first_name
   end
+
+  def postal_number
+    self.postal_code.insert(3, "-")
+  end
 end
