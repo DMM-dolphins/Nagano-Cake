@@ -1,10 +1,10 @@
 class Item < ApplicationRecord
-  
+
   belongs_to :genre
   has_many :cart_items, dependent: :destroy
   has_many :order_details, dependent: :destroy
   has_one_attached :item_image
-  
+
   def with_tax_price
       (price * 1.1).floor
   end
@@ -16,7 +16,7 @@ class Item < ApplicationRecord
     end
     item_image.variant(resize_to_limit: [width, height]).processed
   end
-  
+
   def self.looks(search, word)
     if search == "perfect_match"
       @item = Item.where("name LIKE?", "#{word}")

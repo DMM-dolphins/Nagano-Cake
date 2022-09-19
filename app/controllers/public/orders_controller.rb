@@ -47,7 +47,7 @@ class Public::OrdersController < ApplicationController
       session[:name] = order_params[:name]
     end
   end
-  
+
   def create
     # 注文テーブルにデータを保存
     @order = Order.new(
@@ -60,6 +60,17 @@ class Public::OrdersController < ApplicationController
       payment_method: session[:payment_method]
       )
     @order.save
+    
+    @order.customer.cart_items.each do |cart_item|
+      @order_detail = OrderDetail.new(
+        order_id: @order.id,
+        item_id: cart_item.item.id,
+        price: cart_item.item.with_tax_price,
+        amount: cart_item.amount
+        )
+        @order_detail.save
+    end
+    @order.customer.cart_items.destroy_all
     redirect_to thanks_path
   end
 
