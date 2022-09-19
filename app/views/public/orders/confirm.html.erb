@@ -1,2 +1,52 @@
-<h1>Public::Orders#confirm</h1>
-<p>Find me in app/views/public/orders/confirm.html.erb</p>
+<h4>注文情報確認</h4>
+  <div class="row">
+    <div class="col-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <td>商品名</td>
+            <td>単価（税込）</td>
+            <td>数量</td>
+            <td>小計</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cart_items.each do |cart_item| %>
+            <tr>
+              <td><%= cart_item.item.name %></td>
+              <td><%= cart_item.item.with_tax_price.to_s(:delimited) %></td>
+              <td><%= cart_item.amount %></td>
+              <td><%= cart_item.subtotal.to_s(:delimited) %></td>
+            </tr>
+           <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-3">
+      <table class="table">
+        <tr>
+          <td>送料</td>
+          <td><%= @shipping_cost.to_s(:delimited) %></td>
+        </tr>
+        <tr>
+          <td>商品合計</td>
+          <td><%= session[:sum_price].to_s(:delimited) %></td>
+        </tr>
+        <tr>
+          <td>請求金額</td>
+          <td><%= (session[:sum_price] + @shipping_cost).to_s(:delimited) %> </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+<h5>支払方法</h5>
+<%= session[:payment_method] %>
+<h5>お届け先</h5>
+<%= session[:postal_code] + session[:address] %>
+<%= session[:name] %>
+
+<%= form_with model:@order, url: orders_path, method: :post do |f| %>
+  <%= f.submit "注文を確定する", class: "btn btn-primary" %>
+<% end %>
