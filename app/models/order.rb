@@ -10,4 +10,8 @@ class Order < ApplicationRecord
     preparing_ship: 3,
     finish_ship: 4
   }
+
+  def postal_number
+    self.postal_code.insert(3, "-")
+  end
 end
