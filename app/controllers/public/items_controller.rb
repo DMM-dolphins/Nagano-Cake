@@ -2,7 +2,7 @@ class Public::ItemsController < ApplicationController
   def index
     @genres = Genre.all
     @total_items = Item.count
-    @items = Item.all
+    @items = Item.page(params[:page]).per(8)
   end
 
   def show
@@ -10,5 +10,5 @@ class Public::ItemsController < ApplicationController
     @genres = Genre.all
     @cart_item = CartItem.new
   end
-  
+
 end
