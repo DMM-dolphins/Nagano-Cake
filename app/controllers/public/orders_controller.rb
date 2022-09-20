@@ -14,13 +14,24 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
+    @order = Order.find(params[:id])
+    @ordered_items = @order.order_details.all
+
+    @sum = 0
+    @ordered_items.each do |ordered_item|
+      @sum += ordered_item.item.with_tax_price*ordered_item.amount
+    end
+
+
+
   end
 
   def confirm
     @order = Order.new(order_params)
     @cart_items = CartItem.where(customer_id: current_customer.id)
-
     session[:customer_id] = current_customer.id
+
+    @order.payment_method = order_params[:payment_method]
     session[:payment_method] = order_params[:payment_method]
 
     # 商品合計計算
@@ -59,7 +70,7 @@ class Public::OrdersController < ApplicationController
       payment_method: session[:payment_method]
       )
     @order.save
-    
+
     @order.customer.cart_items.each do |cart_item|
       @order_detail = OrderDetail.new(
         order_id: @order.id,

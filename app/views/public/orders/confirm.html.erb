@@ -42,7 +42,7 @@
   </div>
 
 <h5>支払方法</h5>
-<%= session[:payment_method] %>
+<%= Order.payment_methods_i18n[@order.payment_method] %>
 <h5>お届け先</h5>
 <%= session[:postal_code] + session[:address] %>
 <%= session[:name] %>
