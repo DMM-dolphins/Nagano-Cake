@@ -10,6 +10,7 @@ class Order < ApplicationRecord
     preparing_ship: 3,
     finish_ship: 4
   }
+  
   def with_tax_price
       (price * 1.1).floor
   end
