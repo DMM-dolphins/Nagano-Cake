@@ -1,4 +1,5 @@
 class Public::OrdersController < ApplicationController
+  before_action :authenticate_customer!
   before_action :set_shipping_cost, only: [:confirm, :create]
 
   def new
