@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-9">
-      <h4 class="my-4", style="background-color: #eee; width:330px; padding-left: 12px;"><%= @customer.full_name %>さんの会員情報編集</h4>
+      <h4><%= @customer.full_name %>さんの会員情報編集</h4>
       <%= form_with(model: @customer, url: admin_customer_path, local: true ,method: :patch) do |f| %>
       <table class="table table-borderless table-sm">
         <tr>
@@ -52,7 +52,7 @@
           <td></td>
         </tr>
       </table><br>
-      <div style="margin-left: 160px"><%= f.submit '変更を保存', class:"btn btn-lg" %></div>
+      <div class="btn01", style="margin-left: 160px"><%= f.submit '変更を保存', class:"btn btn-lg" %></div>
       <% end %>
     </div>
   </div>
