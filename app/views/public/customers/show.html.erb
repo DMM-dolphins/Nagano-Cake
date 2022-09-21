@@ -1,42 +1,42 @@
 <div class="container">
   <div class="row mb-30 ">
     <div class="col-5 text-center">
-      <h5>マイページ</h5>
+      <h4>マイページ</h4>
     </div>
   </div>
   <div class="row mt-30 mb-30">
     <div class="col-2 mt-3">
     <h5><strong>登録情報</strong></h5>
     </div>
-    <div class="col-2 mt-3 mb-3">
-    <%= link_to '編集する', edit_customer_path(@customer), class: "btn btn-success" %>
+    <div class="col-2 mt-3 mb-3 btn01">
+    <%= link_to '編集する', edit_customer_path(@customer), class: "btn" %>
     </div>
   </div>
   <div class="row">
     <div class="col-7">
       <table class = "table table-bordered">
         <tr>
-          <td>氏名</td>
+          <td class="table-area">氏名</td>
           <td><%= @customer.full_name_space %></td>
         </tr>
         <tr>
-          <td>カナ</td>
+          <td class="table-area">カナ</td>
           <td><%= @customer.last_name_kana + " " + @customer.first_name_kana %></td>
         </tr>
         <tr>
-          <td>郵便番号</td>
+          <td class="table-area">郵便番号</td>
           <td><%= @customer.postal_code %></td>
         </tr>
         <tr>
-          <td>住所</td>
+          <td class="table-area">住所</td>
           <td><%= @customer.address %></td>
         </tr>
         <tr>
-          <td>電話番号</td>
+          <td class="table-area">電話番号</td>
           <td><%= @customer.phone_number %></td>
         </tr>
         <tr>
-          <td>メールアドレス</td>
+          <td class="table-area">メールアドレス</td>
           <td><%= @customer.email %></td>
         </tr>
       </table>
@@ -47,8 +47,8 @@
     <div class="col-2 mt-3">
       <h5><strong>配送先</strong></h5>
     </div>
-    <div class="col-3 mt-3">
-        <%= link_to '一覧を見る', addresses_path, class: "btn btn-primary" %>
+    <div class="col-3 mt-3 btn02">
+        <%= link_to '一覧を見る', addresses_path, class: "btn" %>
     </div>
   </div>
 
@@ -56,8 +56,8 @@
     <div class="col-2 mt-3 mb-5">
       <h5><strong>注文履歴</strong></h5>
     </div>
-    <div class="col-3 mt-3 mb-5">
-      <%= link_to '一覧を見る', orders_path, class: "btn btn-primary" %>
+    <div class="col-3 mt-3 mb-5 btn02">
+      <%= link_to '一覧を見る', orders_path, class: "btn" %>
     </div>
   </div>
 </div>
