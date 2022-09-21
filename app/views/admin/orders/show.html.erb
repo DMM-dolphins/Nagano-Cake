@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row">
-    <h4 class="my-4", style="background-color: #eee; width:170px; padding-left: 12px;">注文履歴詳細</h4>
+    <h4>注文履歴詳細</h4>
   </div>
-
 
   <div class="row">
     <div class="col-md-9">
@@ -30,7 +29,7 @@
         </tr>
         <tr>
           <td><strong>注文ステータス</strong></td>
-          <td><%= form_with(model: @order, url: admin_order_path(@order), local: true, class: "form-row") do |f| %>
+          <td class="btn01"><%= form_with(model: @order, url: admin_order_path(@order), local: true, class: "form-row") do |f| %>
                 <%= f.select :status, Order.statuses_i18n.invert, {prompt: false} %>
                 　<%= f.submit "更新", class: "btn btn-success btn-sm" %>
               <% end %>
@@ -45,7 +44,7 @@
   <div class="row">
     <div class="col-lg-8">
       <table class="table table-borderless">
-         <thead class="thead-light">
+         <thead class="table-area">
            <tr>
              <th><strong>商品名</strong></th>
              <th><strong>単価（税込）</strong></th>
@@ -61,7 +60,7 @@
              <td><%= order_detail.item.with_tax_price.to_s(:delimited) %></td>
              <td><%= order_detail.amount %></td>
              <td><%= (order_detail.item.with_tax_price*order_detail.amount).to_s(:delimited) %></td>
-             <td><%= form_with model: order_detail, url: admin_order_detail_path(order_detail.id), local: true, class: "form-row" do |f| %>
+             <td class="table-area"><%= form_with model: order_detail, url: admin_order_detail_path(order_detail.id), local: true, class: "form-row" do |f| %>
                    <%= f.select :making_status, OrderDetail.making_statuses_i18n.invert, {prompt: false} %>
                    　<%= f.submit "更新", class: "btn btn-success btn-sm" %>
                  <% end %>

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <h4 style="margin-left:160px; background-color:#eee;" class="px-4 font-weight-bold">注文情報入力</h4>
+    <h4>注文情報入力</h4>
   </div>
 
   <%= form_with model:@order, url:confirm_path, method: :post do |f| %>
@@ -76,7 +76,7 @@
       </div>
 
       <div class="row text-center mt-3">
-        <div class="col">
+        <div class="btn01 col">
           <%= f.submit '確認画面へ進む', class: 'btn btn-primary' %>
         </div>
       </div>
