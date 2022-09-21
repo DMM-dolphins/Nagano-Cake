@@ -1,23 +1,34 @@
-<h3>配送先登録/一覧</h3>
-<%= render 'form', address: @address %>
+<div class="container">
+  <div class="row">
+    <h4 style="margin-left:160px" class="px-4 font-weight-bold">配送先登録/一覧</h4>
+  </div>
 
-<table class = "table">
-  <thead>
-    <td>郵便番号</td>
-    <td>住所</td>
-    <td>宛名</td>
-    <td></td>
-  </thead>
-  <tbody>
-    <% @addresses.each do |address| %>
-      <tr>
-        <td><%= address.postal_code %></td>
-        <td><%= address.address %></td>
-        <td><%= address.name %></td>
-        <td><%= link_to '編集する', edit_address_path(address), class: "btn btn-success" %></td>
-        <td><%= link_to '削除する', address_path(address), method: :delete, class: "btn btn-danger" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+  <%= render 'form', address: @address %>
+  
+  <div class="row">
+    <div class="col-5" style="margin-left: 320px;">
+      <table class = "table table-bordered mt-5">
+        <tr>
+          <thead = "table-area">
+            <td>郵便番号</td>
+            <td>住所</td>
+            <td>宛名</td>
+            <td></td>
+          </thead>
+          <tbody>
+            <% @addresses.each do |address| %>
+              <td><%= address.postal_code %></td>
+              <td><%= address.address %></td>
+              <td><%= address.name %></td>
+              <td>
+                <%= link_to '編集する', edit_address_path(address), class: "btn01" %>
+                <%= link_to '削除する', address_path(address), method: :delete, class: "btn btn-danger" %>
+              </td>
+              </tr>
+            <% end %> 
+          </tbody>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

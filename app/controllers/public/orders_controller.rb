@@ -1,6 +1,5 @@
 class Public::OrdersController < ApplicationController
   before_action :authenticate_customer!
-  before_action :authenticate_customer!
   before_action :set_shipping_cost, only: [:confirm, :create]
 
   def new
@@ -23,9 +22,6 @@ class Public::OrdersController < ApplicationController
     @ordered_items.each do |ordered_item|
       @sum += ordered_item.item.with_tax_price*ordered_item.amount
     end
-
-
-
   end
 
   def confirm
@@ -36,6 +32,21 @@ class Public::OrdersController < ApplicationController
     @order.payment_method = order_params[:payment_method]
     session[:payment_method] = order_params[:payment_method]
 
+    if params[:order][:selected_address] == "3"
+      new_address = Address.new
+      new_address.customer_id = current_customer.id
+      new_address.postal_code = order_params[:postal_code]
+      new_address.address = order_params[:address]
+      new_address.name = order_params[:name]
+      if new_address.save
+        flash.now[:notice] = "新しいお届け先を登録しました"
+      else
+        flash.now[:notice] = "入力内容を確認してください"
+        @addresses = Address.where(customer_id: current_customer.id)
+        render 'new'
+      end
+    end
+    
     # 商品合計計算
     session[:sum_price] = 0
     @cart_items.each do |cart_item|
