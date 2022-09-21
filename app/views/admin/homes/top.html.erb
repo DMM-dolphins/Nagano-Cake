@@ -1,9 +1,13 @@
 <div class="container">
-    <h4>注文履歴一覧</h4>
-    <div>
-      <table class="table">
+  <%= flash[:notice] %>
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <h4 class="my-4", style="background-color: #eee; width:170px; padding-left: 12px;">
+        注文履歴一覧
+      </h4>
+      <table class="table table-hover">
         <thead>
-          <tr>
+          <tr class="table-active">
             <th>購入日時</th>
             <th>購入者</th>
             <th>注文個数</th>
@@ -24,7 +28,9 @@
           <% end %>
         </tbody>
       </table>
+      <div class="mx-auto" style="width: 200px;"><%= paginate @orders %></div>
     </div>
+  </div>
 </div>
 
 
