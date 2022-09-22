@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
-    <h4>注文情報確認</h4>
+    <h4 style="margin-left:150px">注文情報確認</h4>
   </div>
   <div class="row">
     <div class="col-9">
       <table class="table table-bordered">
         <thead class="table-area">
           <tr>
-            <td class="col-6">商品名</td>
+            <td class="col-4">商品名</td>
             <td class="col-2">単価（税込）</td>
             <td class="col-2">数量</td>
             <td class="col-2">小計</td>
@@ -46,7 +46,7 @@
 
   <div class="row">
     <div class="col-2">
-      <h5 class="font-weight-bold mb-5">支払方法</h5>
+      <p class="font-weight-bold", style="font-size:20px">支払方法</p>
     </div>
     <div class="col-2">
       <%= Order.payment_methods_i18n[@order.payment_method] %>
@@ -55,7 +55,7 @@
 
   <div class="row">
     <div class="col-2">
-      <h5 class="font-weight-bold">お届け先</h5>
+      <p class="font-weight-bold", style="font-size:20px">お届け先</p>
     </div>
     <div class="col-10">
       <%= session[:postal_code] + session[:address] %><br>
@@ -63,10 +63,10 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    <duv class="btn01 col-2">
+    <duv class="col-2 text-center">
       <%= form_with model:@order, url: orders_path, method: :post do |f| %>
-        <%= f.submit "注文を確定する", class: "btn btn-success mt-5" %>
+        <%= f.submit "注文を確定する", class: "btn btn01" %>
       <% end %>
     </duv>
   </div>
-</div>
+</div><br><br>

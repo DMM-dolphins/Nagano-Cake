@@ -10,12 +10,11 @@
      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-     <%= render 'layouts/header' %>
+    <%= render 'layouts/header' %>
     <div class="main">
-   <p class="text-center"><%= flash[:notice] %></p>
-    <%= yield %>
-  </div>
-  <%= render 'layouts/footer' %>
- </body>
-
+      <p class="text-center"><%= flash[:notice] %></p>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
+  </body>
 </html>
