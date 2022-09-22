@@ -9,12 +9,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= render 'layouts/header' %>
-    <p class="text-center"><%= flash[:notice] %></p>
+     <%= render 'layouts/header' %>
+    <div class="main">
+   <p class="text-center"><%= flash[:notice] %></p>
     <%= yield %>
+  </div>
   <%= render 'layouts/footer' %>
-  </body>
-  
+ </body>
+
 </html>
