@@ -1,5 +1,5 @@
 <div class="container">
-  <h4 class="text-center" style="background-color:#eee; width:220px; margin:30px 0 50px 60px;">ジャンル一覧・追加</h4>
+  <h4 class="text-center" style=" width:220px; margin:30px 0 50px 60px;"><strong>ジャンル一覧・追加</strong></h4>
   <%= form_with model:@genre, url:admin_genres_path do |f| %>
     <strong><%= f.label :name, "ジャンル名", style:"margin-top:5px ;" %></strong>
     <%= f.text_field :name, placeholder: "ジャンル名", style:"margin-left:50px;" %>
@@ -8,7 +8,7 @@
 
   <table class="table border-bottom", style="width:320px; margin-top:60px;">
     <tbody>
-      <tr class="table-secondary table-area">
+      <tr class="table-area">
         <th><strong>ジャンル</strong></th>
         <th></th>
       </tr>
