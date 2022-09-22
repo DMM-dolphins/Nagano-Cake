@@ -14,10 +14,12 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background:#feeedc;
 //height: 100%;
 
 }
 .main {min-height: 1000px;
+
 }
 header{
   width: 100%;
@@ -32,25 +34,36 @@ footer {
   color:#000;
 }
 h4 {
-    background-color:#c9c;
+    background:#c9c;
     display:inline-block;
+      padding:0.35em;
+    border-radius:3px;
+    color:white
 }
 h5 {
-    background-color:#c9c;
+    background:#c9c;
     display:inline-block;
+    padding:0.35em;
+    border-radius:2px;
+    color:white
 }
 .btn01 {
-  background-color:#c9f;
+  background-color:#efc3bd;
 }
 
 .btn02 {
-  background-color:#66c;
+  background-color:#d2d5ec;
 }
 
 .btn03 {
-  background-color:#6cc;
+  background-color:#bde1da;
 }
 
 .table-area {
- background-color:#c69;
+ background-color:#967e80;
 }
+
+h1 {
+ font-family:cursive;
+ }
+ 

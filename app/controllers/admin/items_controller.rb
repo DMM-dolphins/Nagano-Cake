@@ -12,8 +12,9 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to admin_item_path
+      redirect_to admin_item_path(@item)
     else
+       @genres = Genre.all
       flash[:notice] = "入力内容を確認してください"
       render:"new"
     end
