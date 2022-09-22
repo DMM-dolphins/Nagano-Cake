@@ -10,7 +10,7 @@ class Admin::GenresController < ApplicationController
     if @genre.save
     redirect_to admin_genres_path
     else
-      flash[:notice] = "入力内容を確認してください"
+      flash.now[:notice] = "入力内容を確認してください"
       @genres = Genre.all
       render:"index"
     end
@@ -24,7 +24,7 @@ class Admin::GenresController < ApplicationController
     if @genre.update(genre_params)
     redirect_to admin_genres_path(@genre.id)
     else
-      flash[:notice] = "入力内容を確認してください"
+      flash.now[:notice] = "入力内容を確認してください"
     render :edit
     end
   end

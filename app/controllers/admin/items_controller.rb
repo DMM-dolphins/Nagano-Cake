@@ -16,7 +16,7 @@ class Admin::ItemsController < ApplicationController
     else
        @genres = Genre.all
        @item =Item.new
-      flash[:notice] = "入力内容を確認してください"
+      flash.now[:notice] = "入力内容を確認してください"
       render:"new"
     end
   end
@@ -36,7 +36,7 @@ class Admin::ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to admin_item_path
     else
-      flash[:notice] = "入力内容を確認してください"
+      flash.now[:notice] = "入力内容を確認してください"
       @genres = Genre.all
       @item = Item.new
       render :edit
