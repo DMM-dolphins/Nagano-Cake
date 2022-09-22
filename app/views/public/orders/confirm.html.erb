@@ -37,7 +37,7 @@
           <td><%= session[:sum_price].to_s(:delimited) %></td>
         </tr>
         <tr>
-          <tdtable-area >請求金額</td>
+          <td class="table-area">請求金額</td>
           <td><%= (session[:sum_price] + @shipping_cost).to_s(:delimited) %> </td>
         </tr>
       </table>

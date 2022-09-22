@@ -10,7 +10,6 @@ class Public::AddressesController < ApplicationController
     @address = Address.new(addresses_params)
     @address.customer_id = current_customer.id
     if @address.save
-      binding.pry
       redirect_to addresses_path
     else
       flash.now[:notice] = "入力内容を確認してください"
