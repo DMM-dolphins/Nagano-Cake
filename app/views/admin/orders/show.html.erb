@@ -31,7 +31,7 @@
           <td><strong>注文ステータス</strong></td>
           <td class="btn01"><%= form_with(model: @order, url: admin_order_path(@order), local: true, class: "form-row") do |f| %>
                 <%= f.select :status, Order.statuses_i18n.invert, {prompt: false} %>
-                　<%= f.submit "更新", class: "btn btn-success btn-sm" %>
+                　<%= f.submit "更新", class: "btn btn-sm" %>
               <% end %>
           </td>
         </tr>
@@ -62,7 +62,7 @@
              <td><%= (order_detail.item.with_tax_price*order_detail.amount).to_s(:delimited) %></td>
              <td class="table-area"><%= form_with model: order_detail, url: admin_order_detail_path(order_detail.id), local: true, class: "form-row" do |f| %>
                    <%= f.select :making_status, OrderDetail.making_statuses_i18n.invert, {prompt: false} %>
-                   　<%= f.submit "更新", class: "btn btn-success btn-sm" %>
+                   　<%= f.submit "更新", class: "btn btn-sm" %>
                  <% end %>
              </td>
            </tr>

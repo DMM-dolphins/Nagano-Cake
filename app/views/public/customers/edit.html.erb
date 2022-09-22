@@ -1,50 +1,47 @@
 <div class="container">
   <div class="row">
-    <h4 class="my-4", style="background-color: #eee; width:170px; padding-left: 12px;">会員情報編集</h4>
+    <h4>会員情報編集</h4>
   </div>
   <div class="row">
-    <div class="col-9">
+    <div class="col-10">
       <%= form_with model:@customer do |f| %>
-      <form class="form-horizontal">
-        <div class="form-group form-inline", style="margin-bottom: 5px">
-          <div class="col-form-label col-sm-4"><%= f.label :名前 %> </div>
-          <div class="col-sm-3", style="margin-right:30px"><%= f.text_field :last_name, placeholder:"令和", autofocus: true %></div>
-          <div class="col-sm-3"><%= f.text_field :first_name, placeholder:"道子", autofocus: true %></div>
-        </div>
-        <div class="form-group form-inline", style="margin-bottom: 5px">
-          <div class="col-form-label col-sm-4"><%= f.label :フリガナ %> </div>
-          <div class="col-sm-3", style="margin-right:30px"><%= f.text_field :last_name_kana, placeholder:"レイワ", autofocus: true %></div>
-          <div class="col-sm-3"><%= f.text_field :first_name_kana, placeholder:"ミチコ", autofocus: true %></div>
-        </div>
-        <div class="form-group form-inline", style="margin-bottom: 5px">
-          <div class="col-form-label col-sm-4"><%= f.label :郵便番号 %></div>
-          <div class="col-sm-4"><%= f.text_field :postal_code, placeholder:"0000000", autofocus: true %></div>
-        </div>
-        <div class="form-group form-inline", style="margin-bottom: 5px">
-          <div class="col-form-label col-sm-4"><%= f.label :住所 %></div>
-          <div class="col-sm-8"><%= f.text_field :address, placeholder:"東京都渋谷区代々木神園町0-0", autofocus: true,class:"w-100" %></div>
-        </div>
-        <div class="form-group form-inline", style="margin-bottom: 5px">
-          <div class="col-form-label col-sm-4"><%= f.label :電話番号 %></div>
-          <div class="col-sm-4"><%= f.text_field :phone_number, placeholder:"00000000000", autofocus: true %></div>
-        </div>
-        <div class="form-group form-inline", style="margin-bottom: 5px">
-          <div class="col-form-label col-sm-4"><%= f.label :メールアドレス %></div>
-          <div class="col-sm-4"><%= f.email_field :email, placeholder:"sample@sample.com", autofocus: true, autocomplete: "email" %></div>
-        </div>
+
+      <div class="row mb-3">
+        <%= f.label :名前, class:"col-md-3" %>
+        <%= f.text_field :last_name, placeholder:"令和", autofocus: true, class:"col-md-3" %>
+        <%= f.text_field :first_name, placeholder:"道子", autofocus: true, class:"offset-md-1 col-md-3" %>
       </div>
-    </div><br>
-    <div class="form-inline justify-content-center">
+      <div class="row mb-3">
+        <%= f.label :フリガナ, class:"col-md-3" %>
+        <%= f.text_field :last_name_kana, placeholder:"レイワ", autofocus: true, class:"col-md-3" %>
+        <%= f.text_field :first_name_kana, placeholder:"ミチコ", autofocus: true, class:"offset-md-1 col-md-3" %>
+      </div>
+      <div class="row mb-3">
+        <%= f.label :郵便番号, class:"col-md-3" %>
+        <%= f.text_field :postal_code, placeholder:"0000000", autofocus: true, class:"col-md-3" %>
+      </div>
+      <div class="row mb-3">
+        <%= f.label :住所, class:"col-md-3" %>
+        <%= f.text_field :address, placeholder:"東京都渋谷区代々木神園町0-0", autofocus: true,class:"w-100", class:"col-md-3" %>
+      </div>
+      <div class="row mb-3">
+        <%= f.label :電話番号, class:"col-md-3" %>
+        <%= f.text_field :phone_number, placeholder:"00000000000", autofocus: true, class:"col-md-3" %>
+      </div>
+      <div class="row mb-3">
+        <%= f.label :メールアドレス, class:"col-md-3" %>
+        <%= f.email_field :email, placeholder:"sample@sample.com", autofocus: true, autocomplete: "email", class:"col-md-7" %>
+      </div>
+      <div class="form-inline justify-content-center">
         <div class="form-group btn01">
           <%= f.submit "編集内容を保存", class: "btn" %>
         </div>
-        <div class="form-group btn02">
-          <div style="margin-left:150px">
-            <%= link_to "退会する", unsubscribe_path, class: "btn" %>
-          </div>
-        </div>
-
+        <div class="form-group btn02",style="margin-left:150px">
+          <%= link_to "退会する", unsubscribe_path, class: "btn" %>
+      </div>
     </div>
+    </div><br>
+
       <% end %>
   </div>
 </div>
