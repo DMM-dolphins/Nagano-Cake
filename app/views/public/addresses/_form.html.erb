@@ -23,9 +23,9 @@
     <div class="col-3">
       <%= f.text_field :name, placeholder:'令和道子', class: "form-control" %>
     </div>
-    <div class="btn01" style="margin-left: 220px;">
+    <div style="margin-left: 220px;">
       <% if controller.action_name == 'index' %>
-        <%= f.submit '新規登録', class: 'btn btn01 ml-5' %>
+        <%= f.submit '新規登録', class: 'btn btn01' %>
       <% else %>
         <%= f.submit '変更内容を保存', class: 'btn btn01' %>
       <% end %>

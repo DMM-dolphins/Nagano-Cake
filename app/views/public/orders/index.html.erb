@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row mb-4">
-    <h4 class="px-4 font-weight-bold bg-gray-100" style="margin-left:160px; background-color:#eee;" >注文履歴一覧</h4>
+    <h4 class="px-4 font-weight-bold bg-gray-100" style="margin-left:160px;" >注文履歴一覧</h4>
   </div>
 
   <div class="row">
@@ -31,7 +31,7 @@
         </td>
         <td><%= order.total_payment.to_s(:delimited) + "円" %></td>
         <td><%= order.status_i18n %></td>
-        <td class="btn01"><%= link_to "表示する", order_path(order), class: "btn" %></td>
+        <td><%= link_to "表示する", order_path(order), class: "btn btn01" %></td>
         </tr>
       <% end %>
       </tbody>

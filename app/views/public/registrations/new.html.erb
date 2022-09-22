@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row" style="margin-left: 110px;">
     <h4>新規会員登録</h4>
   </div>
 
@@ -24,7 +24,7 @@
             <%= f.text_field :first_name, placeholder:"道子", autofocus: true, class: "form-control" %>
           </div>
         </div>
-        
+
         <div class="row mt-3">
           <div class="col-3">
             <%= f.label :フリガナ %>
@@ -60,7 +60,7 @@
              <%= f.text_field :postal_code, placeholder:"0000000", autofocus: true, class: "form-control" %>
           </div>
         </div>
-        
+
         <div class="row mt-3">
           <div class="col-3">
              <%= f.label :住所 %>
@@ -69,7 +69,7 @@
              <%= f.text_field :address, placeholder:"東京都渋谷区代々木神園町0-0", autofocus: true, class: "form-control" %>
           </div>
         </div>
-        
+
         <div class="row mt-3">
           <div class="col-3">
              <%= f.label :電話番号（ハイフンなし）%>
@@ -78,7 +78,7 @@
               <%= f.text_field :phone_number, placeholder:"00000000000", autofocus: true, class: "form-control" %>
           </div>
         </div>
-        
+
         <div class="row mt-3">
           <div class="col-3">
             <% if @minimum_password_length %>
@@ -89,7 +89,7 @@
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
           </div>
         </div>
-        
+
         <div class="row mt-3">
           <div class="col-3">
             <%= f.label :パスワード（確認用）%>
@@ -99,8 +99,10 @@
           </div>
         </div>
         
-        <div class="btn01 actions mt-3", style="margin-left:350px">
-          <%= f.submit "新規登録", class: "btn" %>
+        <div class="row mt-3">
+          <div class="col-3 actions", style="margin-left:380px">
+              <%= f.submit "新規登録", class: "btn btn01 btn-lg btn-block" %>
+          </div>
         </div>
       </form>
   <% end %>
