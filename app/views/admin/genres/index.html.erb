@@ -1,10 +1,17 @@
 <div class="container">
-  <h4 class="text-center" style=" width:220px; margin:30px 0 50px 60px;"><strong>ジャンル一覧・追加</strong></h4>
+  <div class="container py-5">
+	<div class="row">
+	 <div class="col-md-10 mx-auto">
+  <h4 ><strong>ジャンル一覧・追加</strong></h4>
+<div class="row-md-10 pb-3">
   <%= form_with model:@genre, url:admin_genres_path do |f| %>
-    <strong><%= f.label :name, "ジャンル名", style:"margin-top:5px ;" %></strong>
-    <%= f.text_field :name, placeholder: "ジャンル名", style:"margin-left:50px;" %>
-    <%= f.submit "新規登録", class: "btn btn01 px-4", style:"font-weight:bold; margin-left:50px;" %>
+  	<div class=" d-flex mb-3">
+    <strong><%= f.label :name, "ジャンル名",class:"mr-3",style:"margin-top:5px ;" %></strong>
+  <%= f.text_field :name, placeholder: "ジャンル名",size: "30x20"; %>
+  <%= f.submit "新規登録", class: "btn btn01 px-4", style:"font-weight:bold; margin-left:50px;" %>
+    </div>
   <% end %>
+</div>
 
   <table class="table border-bottom", style="width:320px; margin-top:60px;">
     <tbody>
