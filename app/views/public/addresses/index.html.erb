@@ -6,18 +6,18 @@
   <%= render 'form', address: @address %>
   
   <div class="row">
-    <div class="col-9 mt-5">
+    <div class="col-8 mt-5">
       <table class = "table table-bordered" style = "margin-left: 75px;">
         <thead = "table-area">
           <tr>
             <td class="col-1">郵便番号</td>
-            <td class="col-4">住所</td>
+            <td class="col-2">住所</td>
             <td class="col-1">宛名</td>
-            <td class="col-3"></td>
+            <td class="col-2"></td>
           </tr>
         </thead>
-        <tbody>
-          <% @addresses.each do |address| %>
+      <tbody>
+        <% @addresses.each do |address| %>
           <tr>
             <td><%= address.postal_code %></td>
             <td><%= address.address %></td>
@@ -27,8 +27,9 @@
               <%= link_to '削除する', address_path(address), method: :delete, class: "btn btn02" %>
             </td>
           </tr>
-          <% end %> 
-        </tbody>
-      </table>
+        <% end %> 
+      </tbody>
+    </table>
     </div>
   </div>
+</div>
