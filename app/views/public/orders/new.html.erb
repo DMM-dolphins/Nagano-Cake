@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <h4>注文情報入力</h4>
+    <h4 style="margin-left: 200px">注文情報入力</h4>
   </div>
 
   <%= form_with model:@order, url:confirm_path, method: :post do |f| %>
@@ -63,22 +63,22 @@
         </div>
       </div>
       <div class="row" style="margin-left: 107px;">
-        <%= f.label :postal_code, "郵便番号(ハイフンなし)", class: "col-3", style: "font-size: 13px; " %>
+        <%= f.label :postal_code, "郵便番号(ハイフンなし)", class: "col-2", style: "font-size: 13px; " %>
         <%= f.text_field :postal_code, placeholder:'0000000', class:"col-3" %>
       </div>
       <div class="row mt-2" style="margin-left: 107px;">
-        <%= f.label :address, "住所", class: "col-3", style: "font-size: 13px;" %>
+        <%= f.label :address, "住所", class: "col-2", style: "font-size: 13px;" %>
         <%= f.text_field :address, placeholder:'東京都渋谷区代々木神園町0-0', class: "col-7" %>
       </div>
       <div class="row mt-2" style="margin-left: 107px;">
-        <%= f.label :name, "宛名", class: "col-3", style: "font-size: 13px;" %>
+        <%= f.label :name, "宛名", class: "col-2", style: "font-size: 13px;" %>
         <%= f.text_field :name, placeholder:'令和道子', class: "col-3" %>
       </div>
 
       <div class="row text-center mt-3">
-        <div class="btn01 col">
-          <%= f.submit '確認画面へ進む', class: 'btn btn-primary' %>
+        <div class="col">
+          <%= f.submit '確認画面へ進む', class: 'btn btn01' %>
         </div>
       </div>
   <% end %>
-</div>
+</div><br><br>
