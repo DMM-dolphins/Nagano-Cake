@@ -1,6 +1,6 @@
 
 <div class="container">
-  <h4 class="text-center", style="width:120px; margin:30px 0 0 115px;">商品一覧</h4>
+  <h4 class="text-center", style="width:120px; margin:30px 0 0 115px;"><b>商品一覧</b></h4>
     <div class="text-right">
   <%= link_to new_admin_item_path, style:"margin-left:1000px; font-size: 50px; color:#555;" do %>
       <i class="fas fa-plus-circle"></i>
@@ -22,7 +22,7 @@
             <tr>
               <td><%= item.id %></td>
               <td class="text-decoration:underline">
-                <%= link_to admin_item_path(item.id), class:"text-dark" do %>
+                <%= link_to admin_item_path(item.id),style:"text-decoration:underline;" do %>
                 <%= item.name %>
                 <% end %>
               </td>
