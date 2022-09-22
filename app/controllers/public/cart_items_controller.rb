@@ -20,6 +20,7 @@ class Public::CartItemsController < ApplicationController
     if @cart_item.save
       redirect_to cart_items_path
     else
+      flash[:alret] = "個数を選択してください。"
       redirect_back(fallback_location: root_path)
     end
 
@@ -27,8 +28,12 @@ class Public::CartItemsController < ApplicationController
   
   def update
     @cart_item = CartItem.find(params[:id])
-    @cart_item.update(cart_item_params)
-    redirect_to cart_items_path
+    if @cart_item.update(cart_item_params)
+      redirect_to cart_items_path
+    else
+      flash[:alret] = "個数を選択してください。"
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   def destroy
@@ -38,7 +43,7 @@ class Public::CartItemsController < ApplicationController
   end
 
   def destroy_all
-    @cart_items = current_customer.CartItem.all
+    @cart_items = current_customer.cart_items.all
     @cart_items.destroy_all
     redirect_to cart_items_path
   end
