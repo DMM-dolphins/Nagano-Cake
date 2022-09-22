@@ -2,7 +2,7 @@
   <div class='row'>
     <div class='col-md-8 offset-2'>
       <h4>ログイン</h4><br>
-      <h5>会員の方はこちらからログイン</h6>
+      <h5>会員の方はこちらからログイン</h5>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field text-center">
           <%= f.label :メールアドレス, style:"margin-right:20px; margin-top:20px;"  %>
@@ -21,8 +21,8 @@
           </div>
         <% end %>
 
-        <div class="btn01 actions text-center">
-          <%= f.submit "ログイン", class: "btn btn-primary px-5", style:"font-weight:bold;margin-right:60px;" %>
+        <div class="actions text-center">
+          <%= f.submit "ログイン", class: "btn btn-primary px-5 btn01", style:"font-weight:bold;margin-right:60px;" %>
         </div>
       <% end %>
 

@@ -1,7 +1,7 @@
 <div class='container'>
   <div class='row'>
     <div class='col-md-8 offset-2'>
-      <h4 class="my-4 mt-5", style="background-color: #eee; width:190px; padding-left: 12px;">管理者ログイン</h4>
+      <h4>管理者ログイン</h4>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field text-center">
           <%= f.label :メールアドレス, style:"margin-right:20px;" %>
@@ -20,8 +20,8 @@
           </div>
         <% end %>
 
-        <div class="btn01 actions text-center">
-          <%= f.submit "ログイン", class: "btn px-5", style:"font-weight:bold;margin-right:60px;" %>
+        <div class="actions text-center">
+          <%= f.submit "ログイン", class: "btn01 btn px-5", style:"font-weight:bold;margin-right:60px;" %>
         </div>
       <% end %><br><br>
       <%= render "admin/shared/links" %>
