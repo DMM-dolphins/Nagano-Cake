@@ -5,7 +5,7 @@
       <table class="table table-sm table-borderless">
         <tr>
           <td scope="col", style="width: 25%"><strong>購入者</strong></td>
-          <td><%= link_to admin_customer_path(@order.customer) do %>
+          <td><%= link_to admin_customer_path(@order.customer),style:"text-decoration:underline;" do %>
                 <%= @order.customer.full_name %>
               <% end %>
           </td>
