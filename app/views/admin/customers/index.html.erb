@@ -15,8 +15,8 @@
         <% @customers.each do |customer| %>
           <tr>
             <td><%= customer.id %></td>
-            <td class="text-decoration:underline">
-              <%= link_to admin_customer_path(customer.id),class:"text-dark"  do %>
+            <td>
+              <%= link_to admin_customer_path(customer.id),class:"text-dark",style:"text-decoration:underline;"  do %>
                   <%= customer.full_name %>
                 <% end %>
             </td>
